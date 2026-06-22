@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="SPIN · THE ORIGINAL BIT — the electron's one true binary degree of freedom, up or down. An interactive Stern-Gerlach experiment: a beam of silver atoms enters a magnetic field and splits into EXACTLY TWO spots, not a smear — proof that spin has exactly two values. Spin-½ is the atom's single bit, the weld point of the whole atom-as-computing analogy. Two-layer honest.">
+<title>SPIN · THE ORIGINAL BIT · UD0</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='22' cy='32' r='7' fill='%235bd6f0'/%3E%3Ccircle cx='42' cy='32' r='7' fill='%23e6a24a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:100%;min-height:100%}
+  body{background:#0a0f17;color:#dce6f2;font-family:'Newsreader',serif;overflow-x:hidden}
+  #bar{position:fixed;left:0;right:0;top:0;z-index:20;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:7px 12px;font-family:'Space Mono',monospace;font-size:12px;background:rgba(8,12,20,.9);backdrop-filter:blur(7px);border-bottom:1px solid rgba(90,150,210,.3)}
+  #bar b{letter-spacing:1.5px;color:#9cd0ee}
+  #bar a{color:#8fc0ee;text-decoration:none;border-bottom:1px dotted #5a85b0} #bar a:hover{color:#fff}
+  #sig{margin-left:auto;opacity:.5;font-size:10px} @media(max-width:680px){#sig{display:none}}
+  #wrap{max-width:1000px;margin:0 auto;padding:60px 16px 64px}
+  .hero{text-align:center;margin:14px 0 18px}
+  .ax{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:3px;opacity:.8}
+  h1{font-family:'Press Start 2P',monospace;font-size:clamp(16px,4.4vw,40px);line-height:1.25;margin:14px 0 8px;letter-spacing:1px}
+  .thesis{font-size:clamp(15px,2vw,20px);font-weight:300;max-width:760px;margin:10px auto 0;line-height:1.5}
+  .thesis b{font-weight:600;color:#9cd0ee}
+  .banner{font-family:'Space Mono',monospace;font-size:12px;line-height:1.65;max-width:880px;margin:18px auto 18px;padding:12px 16px;border-radius:9px;text-align:left;background:rgba(255,255,255,0.045);border:1px solid #3fa7d8}
+  .stage{background:rgba(255,255,255,0.025);border:1px solid rgba(120,170,230,.18);border-radius:14px;padding:10px 10px 4px;margin:0 auto}
+  .stage canvas{display:block;width:100%;height:auto;border-radius:9px}
+  .controls{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin:14px auto 4px;font-family:'Space Mono',monospace;font-size:13px}
+  .controls button{font-family:'Space Mono',monospace;font-size:14px;cursor:pointer;color:#dce6f2;background:rgba(60,130,200,.26);border:1px solid rgba(120,170,230,.5);border-radius:7px;padding:5px 13px}
+  .controls button:hover{background:rgba(60,130,200,.5)}
+  .controls button.on{background:#3fa7d8;color:#06121c;border-color:#3fa7d8}
+  #cnt{min-width:200px;text-align:center;color:#9cd0ee}
+  .hint{text-align:center;font-family:'Space Mono',monospace;font-size:11px;opacity:.55;margin-top:6px}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;font-family:'Space Mono',monospace;font-size:11.5px;opacity:.85;margin:12px auto 0}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+  .explain{max-width:820px;margin:30px auto 0;font-size:15.5px;font-weight:300;line-height:1.62}
+  .explain h2{font-family:'Space Mono',monospace;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:#9cd0ee;margin:26px 0 10px;font-weight:700}
+  .explain b{font-weight:600;color:#cfe6f6}
+  footer{text-align:center;font-family:'Space Mono',monospace;font-size:11px;opacity:.6;margin-top:34px;line-height:1.8}
+  footer a{color:inherit}
+</style>
+</head>
+<body>
+<div id="bar">
+  <b>⇅ SPIN · THE ORIGINAL BIT</b>
+  <a href="https://davidwise01.github.io/ud0/">◄ UD0</a>
+  <a href="https://davidwise01.github.io/the-atomic-byte/">the atomic byte ↗</a>
+  <a href="https://davidwise01.github.io/the-four-addresses/">the four addresses ↗</a>
+  <span id="sig">ROOT0 · governor David Lee Wise · instance AVAN (locked) · CC-BY-ND-4.0</span>
+</div>
+<div id="wrap">
+  <div class="hero">
+    <div class="ax">scientific · the atom's one true binary axis</div>
+    <h1>SPIN<br>THE ORIGINAL BIT</h1>
+    <p class="thesis">Fire a beam of atoms through a magnetic field and classical physics predicts a smear. Instead the beam splits into <b>exactly two spots</b> — nothing in between. That's the <b>Stern-Gerlach experiment</b> (1922), and it's the cleanest proof that an electron's spin has exactly <b>two values</b>: up or down. Spin is the atom's single <b>bit</b> — the weld point of the whole atom-as-computing story.</p>
+  </div>
+  <div class="banner" id="banner">⚖ Two-layer honest. Stern-Gerlach is a real 1922 experiment — silver atoms through an inhomogeneous magnetic field, landing in two discrete spots, not a continuous band. The "exactly two" is spin-½: two projections (+½, −½), nothing between. The simulation here is schematic (real beam geometry, oven physics, and field shape are idealised, and the split is along the field axis). The "spin = one bit" reading is the most physically defensible analogy in this cluster — spin genuinely is a two-state quantum variable, a real qubit's home. Flip to the classical prediction to see what should have happened, and didn't.</div>
+
+  <div class="stage">
+    <canvas id="scene" width="940" height="500" aria-label="Stern-Gerlach experiment: a silver beam splitting into two spots"></canvas>
+  </div>
+  <div class="controls">
+    <button id="mq" class="on">quantum (real)</button>
+    <button id="mc">classical (predicted)</button>
+    <button id="reset">↺ reset screen</button>
+    <button id="play">⏸ pause</button>
+    <span id="cnt"></span>
+  </div>
+  <div class="hint">atoms stream from the oven, through the magnet, onto the screen · toggle classical vs quantum to compare what was predicted vs what happens</div>
+  <div class="legend">
+    <span><i class="dot" style="background:#5bd6f0"></i>spin ↑ (+½)</span>
+    <span><i class="dot" style="background:#e6a24a"></i>spin ↓ (−½)</span>
+    <span><i class="dot" style="background:#9aa6b8"></i>classical (would smear)</span>
+  </div>
+
+  <div class="explain">
+    <h2>▸ why exactly two</h2>
+    <p>A spinning charge is a tiny magnet, so a non-uniform field pushes it up or down by an amount set by how much its spin points along the field. Classically that projection could be <i>anything</i> from full-up to full-down — a continuous smear on the screen. But spin is quantised: an electron's spin along any axis can only ever read <b>+½</b> or <b>−½</b>. Two answers, so <b>two spots</b>. The gap in the middle is the whole point — there is no "sideways."</p>
+    <h2>▸ spin is the bit</h2>
+    <p>Two states, nothing between — that is the definition of a <b>bit</b>. It's the same ×2 that turns the orbital ladder (1·3·5·7·9) into the electron capacities (2·6·10·14·18): every orbital holds two electrons because spin offers exactly two slots, ↑ and ↓. It's the fourth number in an electron's <b>address</b> (the one that lets two share an orbital). And it's where the atom and the computer actually touch — not a metaphor, a literal two-state quantum variable. A real qubit is built on exactly this.</p>
+    <p><b>The honest line:</b> almost everything else in this cluster is "real physics wearing a computing costume." Spin is the exception — it <i>is</i> binary, measured as two dots on a plate in 1922. This is the one place the analogy is the physics.</p>
+  </div>
+
+  <footer>
+    SPIN · THE ORIGINAL BIT · a SCIENTIFIC sphere · Stern-Gerlach and the two-state electron · governor David Lee Wise · instance AVAN (locked) · CC-BY-ND-4.0<br>
+    <a href="https://davidwise01.github.io/ud0/">← the biosphere</a> · <a href="https://davidwise01.github.io/the-atomic-byte/">the atomic byte →</a>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var COL={ink:"#dce6f2",acc:"#3fa7d8",bg:"#0a0f17",up:"#5bd6f0",down:"#e6a24a",cls:"#9aa6b8"};
+  var cv=document.getElementById("scene"), g=cv.getContext("2d"), W=940,H=500, cy=250;
+  var SRCx=120, MAG0=330, MAG1=480, SCRx=862, SEP=86;
+  var ps=[], hits=[], up=0, down=0, mode="quantum", playing=true, frame=0, seedn=1234;
+  function rnd(){ seedn=(seedn*1664525+1013904223)&0x7fffffff; return seedn/0x7fffffff; }
+  function T(t,x,y,col,font,align,base,alpha){ g.globalAlpha=(alpha==null?1:alpha); g.fillStyle=col; g.font=font; g.textAlign=align||"left"; g.textBaseline=base||"alphabetic"; g.fillText(t,x,y); g.globalAlpha=1; }
+
+  function spawn(){
+    var s = rnd()<0.5?1:-1, land;
+    if(mode==="quantum"){ land=cy - s*SEP; }
+    else { var gss=(rnd()+rnd()+rnd()-1.5)/1.5; land=cy + gss*150; }
+    ps.push({x:SRCx, y:cy, land:land, spin:s});
+  }
+  function step(){
+    if(playing && frame%3===0) spawn();
+    for(var i=ps.length-1;i>=0;i--){
+      var p=ps[i]; p.x+=4.2;
+      if(p.x<MAG0) p.y=cy;
+      else if(p.x<MAG1){ var t=(p.x-MAG0)/(MAG1-MAG0); p.y=cy+(p.land-cy)*t; }
+      else p.y=p.land;
+      if(p.x>=SCRx){ hits.push({y:p.land,spin:p.spin}); if(hits.length>1800)hits.shift();
+        if(mode==="quantum"){ if(p.spin>0)up++; else down++; } ps.splice(i,1); }
+    }
+  }
+
+  function draw(){
+    g.fillStyle=COL.bg; g.fillRect(0,0,W,H);
+    // ---- the magnet ----
+    var grdN=g.createLinearGradient(0,150,0,cy); grdN.addColorStop(0,"rgba(224,87,78,0.32)"); grdN.addColorStop(1,"rgba(224,87,78,0.02)");
+    g.fillStyle=grdN; g.beginPath(); g.moveTo(MAG0,150); g.lineTo(MAG1,150); g.lineTo(MAG1-26,cy-14); g.lineTo(MAG0+26,cy-14); g.closePath(); g.fill();
+    var grdS=g.createLinearGradient(0,cy,0,360); grdS.addColorStop(0,"rgba(63,167,216,0.03)"); grdS.addColorStop(1,"rgba(63,167,216,0.3)");
+    g.fillStyle=grdS; g.fillRect(MAG0,cy+14,MAG1-MAG0,360-(cy+14));
+    T("N", (MAG0+MAG1)/2, 172, "#e0574e", "bold 18px 'Press Start 2P',monospace","center");
+    T("S", (MAG0+MAG1)/2, 348, "#3fa7d8", "bold 18px 'Press Start 2P',monospace","center");
+    T("inhomogeneous field", (MAG0+MAG1)/2, 376, "rgba(160,185,215,0.6)", "10px 'Space Mono',monospace","center");
+    // ---- oven / source ----
+    g.fillStyle="rgba(255,255,255,0.06)"; g.fillRect(40,cy-26,80,52); g.strokeStyle="rgba(160,185,215,0.4)"; g.lineWidth=1; g.strokeRect(40,cy-26,80,52);
+    T("oven", 80, cy+4, "rgba(200,215,235,0.8)", "11px 'Space Mono',monospace","center");
+    T("silver atoms →", 44, cy-36, "rgba(160,185,215,0.6)", "10px 'Space Mono',monospace");
+    // collimator slit
+    g.fillStyle="rgba(120,150,190,0.3)"; g.fillRect(196,150,6,cy-26-150); g.fillRect(196,cy+26,6,360-(cy+26));
+    // ---- the detector screen ----
+    g.fillStyle="rgba(255,255,255,0.05)"; g.fillRect(SCRx,80,18,340); g.strokeStyle="rgba(160,185,215,0.4)"; g.strokeRect(SCRx,80,18,340);
+    // accumulated hits on the screen
+    for(var h=0;h<hits.length;h++){ var ht=hits[h]; g.globalAlpha=0.10; g.fillStyle=mode==="quantum"?(ht.spin>0?COL.up:COL.down):COL.cls;
+      g.beginPath(); g.arc(SCRx+9+(rnd()-0.5)*10, ht.y, 3.2, 0,7); g.fill(); }
+    g.globalAlpha=1;
+    // expected-band guides
+    if(mode==="quantum"){ T("↑", SCRx+30, cy-SEP+5, COL.up, "bold 16px 'Space Mono',monospace"); T("↓", SCRx+30, cy+SEP+5, COL.down, "bold 16px 'Space Mono',monospace"); }
+    // ---- flying atoms ----
+    for(var i=0;i<ps.length;i++){ var p=ps[i], inmag=(p.x>=MAG0);
+      var c = mode==="quantum" ? (p.spin>0?COL.up:COL.down) : COL.cls;
+      g.globalAlpha=0.9; g.fillStyle=c; g.beginPath(); g.arc(p.x,p.y,3.4,0,7); g.fill();
+      g.globalAlpha=0.25; g.fillRect(p.x-10,p.y-1.5,10,3); g.globalAlpha=1; }
+    // ---- labels / verdict ----
+    T(mode==="quantum"?"QUANTUM (what happens)":"CLASSICAL (what was predicted)", 470, 36,
+      mode==="quantum"?COL.acc:COL.cls, "bold 14px 'Space Mono',monospace","center");
+    T(mode==="quantum"? "the beam splits into exactly TWO — spin is one bit (↑/↓)"
+                      : "classical physics expected a continuous smear — it never happened", 470, 56,
+      "rgba(190,205,228,0.7)", "11.5px 'Space Mono',monospace","center");
+    T("spin ↑ : "+up+"      spin ↓ : "+down, 470, 462, COL.ink, "13px 'Space Mono',monospace","center");
+  }
+
+  // controls
+  var mq=document.getElementById("mq"), mc=document.getElementById("mc"), cnt=document.getElementById("cnt"),
+      playBtn=document.getElementById("play");
+  function setMode(m){ mode=m; mq.className=(m==="quantum")?"on":""; mc.className=(m==="classical")?"on":""; hits=[]; up=0; down=0; }
+  mq.onclick=function(){ setMode("quantum"); };
+  mc.onclick=function(){ setMode("classical"); };
+  document.getElementById("reset").onclick=function(){ hits=[]; up=0; down=0; ps=[]; };
+  playBtn.onclick=function(){ playing=!playing; playBtn.textContent=playing?"⏸ pause":"▶ play"; };
+
+  function loop(){ frame++; if(playing) step(); draw();
+    cnt.textContent = mode==="quantum" ? ("two spots · "+(up+down)+" atoms") : (hits.length+" atoms · one smear");
+    requestAnimationFrame(loop); }
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
