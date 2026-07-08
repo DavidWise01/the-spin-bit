@@ -4,6 +4,6 @@ slug  : the-spin-bit
 seal  : a7904dcb2a27d11dd38bfa3a70484e618c4b4e6c09ae2819b6d62aa00132d25a
 prev  : 1989a61dd4e3cc878650a73ff86deae7b10ac0e531e66cc9117f91d6edffc642
 link  : 3d3a2babecdee76eda4a181ebe96eb553cc3220ef61055b19e42d24ce2d9c22d
-head  : 3447d3a0533aaf1e29a8bdc67a9774884fb3ae9dbc8a17064b7a008ca3c4ec90
+head  : 13f9ace173ef2e60af38912ba329b4afcb5a38b84a0e4495e8d30327f8c99cc2
 
 — the tether: link = sha256(index|slug|seal|prev). the chain head commits to the whole corpus.
